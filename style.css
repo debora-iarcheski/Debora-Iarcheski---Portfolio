@@ -9,9 +9,9 @@
     /* Cor de fundo dos cards */
     --muted: #bdbdbd;
     /* Cor de textos secundários */
-    --accent: #8ad66c;
+    --accent: #ff6600;
     /* Cor de destaque (verde) */
-    --accent2: #8ff766;
+    --accent2: #fd8a3d;
     /* hover (verde escuro) */
     --glass: rgba(255, 255, 255, 0.09);
     /* Transparência para efeito "vidro" */
@@ -19,6 +19,7 @@
     --maxwidth: 1100px;
     /* Largura máxima do container */
     --width-bg-cards: 80%;
+
 }
 
 html {
@@ -51,8 +52,8 @@ body {
 
 .my-photo {
     width: 200px;
-    border-radius: 60%;
-    box-shadow: 2px 2px 20px #0f0f0f;
+    border-radius: 20px;
+    
 }
 
 .text-about-me {
@@ -151,8 +152,8 @@ body {
 }
 
 .button-projects:hover {
-    border: solid var(--muted) 3px;
-    background-color: var(--muted);
+    border: solid var(--accent) 3px;
+    background-color: var(--accent2);
 
 }
 
@@ -204,7 +205,7 @@ body {
 .title-project-award {
     color: var(--accent);
     font-size: 30px;
-    margin-left: 20px;
+    padding-left: 20px;
     font-family: "Playfair Display", serif;
 
 }
@@ -232,7 +233,7 @@ body {
 .title-projects {
     color: #eeeeee;
     font-size: 30px;
-    margin-left: 20px;
+    padding-left: 20px;
     font-family: "Playfair Display", serif;
 }
 
@@ -397,20 +398,427 @@ footer {
 
 }
 
-.back-button>a {
-    position: fixed;          /* Fica fixo na tela */
-    bottom: 20px;                /* Distância do topo */
-    right: 20px;              /* Distância da lateral direita */
-    width: 40px;
-    height: 40px;             /* Definindo altura para ser redondo */
-    background-color: #8ad66c;
+#button-top {
+    position: fixed;
+    /* Fica fixo na tela */
+    bottom: 20px;
+    /* Distância do topo */
+    right: 20px;
+    /* Distância da lateral direita */
+    width: 30px;
+    height: 30px;
+    /* Definindo altura para ser redondo */
+    background-color: transparent;
+    color: var(--accent2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* Mostra que é clicável */
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
+    text-decoration: none;
+    border: none;
+    font-weight: 800;
+    box-shadow: 2px 2px 20px var(--accent2);
+
+}
+
+#button-top:hover {
+    box-shadow: 2px 2px 30px var(--accent2);
+}
+
+.hidden {
+    /* CRIEI UMA CLASSE PARA MOSTRAR E ESCONDER O BOTÃO DE SCROLL*/
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+#button-mode {
+    position: fixed;
+    /* Fica fixo na tela */
+    top: 20px;
+    /* Distância do topo */
+    right: 20px;
+    /* Distância da lateral direita */
+    width: 30px;
+    height: 30px;
+    /* Definindo altura para ser redondo */
+    background-color: transparent;
     color: #0f0f0f;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;          /* Mostra que é clicável */
-    z-index: 1000;            /* Garante que fique acima de outros elementos */
+    cursor: pointer;
+    /* Mostra que é clicável */
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
     text-decoration: none;
+    border: none;
+    font-size: 22px;
+    box-shadow: 2px 2px 20px var(--accent2);
+
+}
+
+#button-mode:hover {
+    box-shadow: 2px 2px 30px var(--accent2);
+}
+
+
+/* MODO LIGHT */
+body.light-mode {
+    --bg: #f5f5f5;
+    --card: #c7c7c7;
+    --muted: #333333;
+    --accent: #ff6600;
+    --shabow: #949494;
+}
+
+body.light-mode .top {
+    background-color: #ffffff;
+    /* fundo claro para top */
+    color: #333333;
+    /* texto escuro */
+    box-shadow: 2px 2px 20px var(--shabow);
+}
+
+body.light-mode .top-dois {
+    background-color: #ffffff;
+    /* fundo claro para top */
+    color: #333333;
+    /* texto escuro */
+    box-shadow: 2px 2px 20px var(--shabow);
+}
+
+body.light-mode .container-projects {
+    background-color: #ffffff;
+    /* fundo claro para top */
+    color: #333333;
+    /* texto escuro */
+    box-shadow: 2px 2px 20px var(--shabow);
+}
+
+body.light-mode .container-skills {
+    background-color: #ffffff;
+    /* fundo claro para top */
+    color: #333333;
+    /* texto escuro */
+    box-shadow: 2px 2px 20px var(--shabow);
+}
+
+body.light-mode .container-activity {
+    background-color: #ffffff;
+    /* fundo claro para top */
+    color: #333333;
+    /* texto escuro */
+    box-shadow: 2px 2px 20px var(--shabow);
+}
+
+body.light-mode footer {
+    background-color: #ffffff;
+    /* fundo claro para top */
+    color: #333333;
+    /* texto escuro */
+    box-shadow: 2px 2px 20px var(--shabow);
+}
+
+body.light-mode .skills-individual {
+    background-color: var(--bg);
+}
+
+body.light-mode .skills-individual:hover {
+
+    box-shadow: 1px 1px 20px var(--shabow);
+}
+
+body.light-mode #button-mode {
+    border: solid var(--accent) 1px;
+    box-shadow: 2px 2px 10px var(--accent2);
+    background-color: transparent;
+}
+
+body.light-mode #button-top {
+    color: var(--bg);
+    background-color: var(--accent2);
+    box-shadow: 2px 2px 10px var(--accent2);
+}
+
+body.light-mode .text-presentation {
+    color: var(--muted);
+
+}
+
+body.light-mode .title-projects {
+    color: var(--muted);
+
+}
+
+body.light-mode .button-projects {
+    color: var(--muted)
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* EXTRA SMALL DEVICES (até 500px) */
+@media (max-width: 500px) {
+    :root {
+        --width-bg-cards: 98%;
+    }
+
+    .my-name {
+        font-size: 26px;
+    }
+
+    .my-photo {
+        width: 100px;
+    }
+
+    .image-projects {
+        max-width: 240px;
+    }
+
+    .container-projects{
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .description-project{
+        text-align: justify;
+        margin: auto;
+    }
+
+
+    .video-projects {
+        max-width: 250px;
+    }
+
+    .title-projects{
+        margin: auto;
+    }
+
+    .three-buttons a {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .tools {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        /* limite para não estourar */
+        align-items: center;
+    }
+
+   
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    #button-top,
+    #button-mode {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* MOBILE (até 600px) */
+@media (max-width: 600px) {
+    :root {
+        --width-bg-cards: 95%;
+    }
+
+    .my-name {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .container-left,
+    .container-right {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .my-photo {
+        width: 120px;
+    }
+
+    .container-cards {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .image-projects {
+        width: 100%;
+        max-width: 280px;
+    }
     
+
+    .image-projects-descriptions {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .container-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .video-projects {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .title-projects{
+        margin: auto;
+    }
+
+    .three-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .three-buttons a {
+        width: 90%;
+        text-align: center;
+    }
+
+    .tools {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colunas */
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        /* limite para não estourar */
+    }
+
+    .tools .button-tools:last-child,
+    .tools .button-tools-link:last-child {
+        grid-column: 1 / -1;
+        /* último ocupa toda a linha */
+        justify-self: center;
+        /* centraliza */
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #button-top,
+    #button-mode {
+        width: 45px;
+        height: 45px;
+    }
+
+    #button-mode {
+        top: 15px;
+        right: 15px;
+    }
+
+    #button-top {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* TABLET (601px a 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    :root {
+        --width-bg-cards: 90%;
+    }
+
+    .my-name {
+        font-size: 45px;
+    }
+
+    .container-right {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .container-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .image-projects-descriptions {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tools {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 colunas */
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        /* limite para não estourar */
+    }
+
+    .tools .button-tools:last-child,
+    .tools .button-tools-link:last-child {
+        grid-column: 1 / -1;
+        /* último ocupa toda a linha */
+        justify-self: center;
+        /* centraliza */
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* DESKTOP (acima de 901px) */
+@media (min-width: 901px) {
+    :root {
+        --width-bg-cards: 80%;
+    }
+
+    .my-name {
+        font-size: 60px;
+    }
+
+    .container-right {
+        flex-direction: row;
+        text-align: justify;
+    }
+
+    .container-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .image-projects-descriptions {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
